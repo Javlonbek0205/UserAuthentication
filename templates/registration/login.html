@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+    <style>
+        .invalid-feedback {
+        color: red; /* Make the text red */
+        margin-top: -24px; /* Move the error message closer to the input */
+        margin-left: 10px; /* Slightly shift the error message to the right */
+        font-size: 12px; /* Set a consistent font size */
+    }
+
+    </style>
 <div class="main">
         <!-- Sing in  Form -->
         <section class="sign-in">
@@ -17,10 +26,20 @@
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="username" id="your_name" placeholder="Username"/>
                             </div>
+                            {% if form.errors.username.0 %}
+                            <div class="invalid-feedback">
+                                {{ form.errors.username.0 }}
+                            </div>
+                        {% endif %}
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="password" name="password" id="your_pass" placeholder="Password"/>
                             </div>
+                        {% if form.errors.password.0 %}
+                            <div class="invalid-feedback">
+                                {{ form.errors.password.0 }}
+                            </div>
+                        {% endif %}
                             <div class="form-group">
                                 <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
                                 <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
