@@ -26,18 +26,18 @@
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="username" id="your_name" placeholder="Username"/>
                             </div>
-                            {% if form.errors.username.0 %}
+                            {% if form.errors.username %}
                             <div class="invalid-feedback">
-                                {{ form.errors.username.0 }}
+                                {{ form.errors.username }}
                             </div>
                         {% endif %}
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="password" name="password" id="your_pass" placeholder="Password"/>
                             </div>
-                        {% if form.errors.password.0 %}
+                        {% if form.errors.password %}
                             <div class="invalid-feedback">
-                                {{ form.errors.password.0 }}
+                                {{ form.errors.password }}
                             </div>
                         {% endif %}
                             <div class="form-group">
